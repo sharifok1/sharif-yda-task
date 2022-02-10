@@ -15,13 +15,21 @@ const ServeFood = () => {
     const [roll,setRoll]=useState('')
     const [foodCode,setFoodCode]=useState('')
     const [render,setRender]=useState(0)
+    const [newServ,setnewServ]=useState()
     // search data//
     const { register, handleSubmit} = useForm();
     const onSubmit = data =>{
         setAddDate(data.date)
         setShift(data.shift)
-        setRoll(data.roll)
+        setRoll(data.roll) 
     }
+    useEffect(()=>{
+        const url=`http://localhost:5000/findServed?roll=${roll}`;
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setnewServ(data));
+    },[roll])
+
 console.log(addDate,shift,roll);
     //for total data length
     useEffect(()=>{
@@ -30,7 +38,6 @@ console.log(addDate,shift,roll);
         .then(res=>res.json())
         .then(data=>setPages(Math.ceil(data.count/size)))
         },[])
-
     useEffect(()=>{
     const url = `https://morning-lowlands-71578.herokuapp.com/servedStudent?currentPage=${currentPage}&&size=${size}&addDate=${addDate}&shift=${shift}&roll=${roll}`;
     fetch(url)
@@ -76,9 +83,17 @@ console.log(addDate,shift,roll);
                     <input className="serve-in" {...register("roll")} placeholder="roll" type='number' required/>  
                     <input className="serve-in" type="submit" value="Search Student" />
                 </div> 
-                {/* <div className='status-part'>
-                   
-                </div>  */}
+                <div className='status-part'>
+                   {
+                       newServ?.map(student=><div
+                       key={student._id}
+                       >
+                           <h3>Student Name:{student.fullName}</h3>
+                           <h3>Roll: {student.roll}</h3>
+                           <Box style={{backgroundColor:'#0ff'}}>Status:{student.served?student.served:<p>Not Served</p>}</Box>
+                       </div>)
+                   }
+                </div> 
                 
                 </Box>
         </form>

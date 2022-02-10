@@ -9,8 +9,8 @@ const StudentTable = () => {
     
     const size = 8;
     const [students, setStudents]= useState();
-    const [active, setActive]= useState();
-    const [inActive, setInActive]= useState();
+    const [active, setActive]= useState([]);
+    const [inActive, setInActive]= useState([]);
     const [pages, setPages] = useState(0);
     const [currentPage, setCurrentPage]=useState(0)
     const [num,setNum]=useState(0);
@@ -49,12 +49,10 @@ const StudentTable = () => {
 
         ///handleStatus
         const makeActiveHandler=()=>{
-            console.log(active)
-            console.log(inActive)
+            // let activeElement=[]
         }
         const makeInActiveHandler=()=>{
-            console.log(active)
-            console.log(inActive)
+            // let inActiveElement=[]
         }
     return (
         <div>
