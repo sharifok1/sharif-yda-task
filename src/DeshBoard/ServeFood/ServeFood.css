@@ -1,0 +1,23 @@
+.input-field{
+ display: flex;
+ background-color: darkgray;
+ margin-bottom: 10px;
+ width: 100%;
+ justify-content: flex-start;
+}
+.serve-in{
+ display: block;
+ width: 100%;
+ padding: 5px;
+ margin: 10px;
+ font-size: 14px;
+ font-weight: 600;
+ color: #222;
+}
+.status-part{
+    text-align: left;
+    margin: 10px;
+    margin-left: 10%;
+    font-size: large;
+
+}

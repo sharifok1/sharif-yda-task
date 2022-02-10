@@ -1,0 +1,15 @@
+.reg-filed{
+    width: 60%;
+    padding: 5px;
+    margin: 5px;
+}
+.reg-btn{
+    width: 60%;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: cadetblue;
+    border: .2px solid #000;
+    color: #eee;
+    font-weight: 500;
+    font-size: 16px;
+}
