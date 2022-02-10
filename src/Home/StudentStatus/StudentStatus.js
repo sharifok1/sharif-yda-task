@@ -12,14 +12,14 @@ const StudentStatus = () => {
 
     //for total data length
     useEffect(()=>{
-        const url=`http://localhost:5000/students?roll=${roll}`;
+        const url=`https://morning-lowlands-71578.herokuapp.com/students?roll=${roll}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>setPages(Math.ceil(data.count/size)))
         },[pages,roll])
 
     useEffect(()=>{
-    const url = `http://localhost:5000/students?currentPage=${currentPage}&&size=${size}`;
+    const url = `https://morning-lowlands-71578.herokuapp.com/students?currentPage=${currentPage}&&size=${size}`;
     fetch(url)
     .then(res=>res.json())
     .then(data=>{setStudents(data.result);})

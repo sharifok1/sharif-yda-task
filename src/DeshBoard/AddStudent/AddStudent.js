@@ -6,7 +6,7 @@ const AddStudent = () => {
     const { register, handleSubmit, reset} = useForm();
     const onSubmit = data =>{
       // save student data for management
-    const url = 'http://localhost:5000/students'
+    const url = 'https://morning-lowlands-71578.herokuapp.com/students'
     axios.post(url, data)
     .then(res=>{
         if(res.data.insertedId){
@@ -16,7 +16,7 @@ const AddStudent = () => {
     });
 
     // save data sefarate for serve food
-    const urls = 'http://localhost:5000/servedStudent'
+    const urls = 'https://morning-lowlands-71578.herokuapp.com/servedStudent'
       axios.post(urls, data)
       .then(res=>{
           if(res.data.insertedId){

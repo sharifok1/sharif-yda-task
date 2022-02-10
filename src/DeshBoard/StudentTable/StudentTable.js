@@ -16,14 +16,14 @@ const StudentTable = () => {
     const [num,setNum]=useState(0);
     //for total data length
     useEffect(()=>{
-        const url="http://localhost:5000/students";
+        const url="https://morning-lowlands-71578.herokuapp.com/students";
         fetch(url)
         .then(res=>res.json())
         .then(data=>setPages(Math.ceil(data.count/size)))
         },[pages])
 
     useEffect(()=>{
-    const url = `http://localhost:5000/students?currentPage=${currentPage}&&size=${size}`;
+    const url = `https://morning-lowlands-71578.herokuapp.com/students?currentPage=${currentPage}&&size=${size}`;
     fetch(url)
     .then(res=>res.json())
     .then(data=>{setStudents(data.result);})
@@ -36,7 +36,7 @@ const StudentTable = () => {
         const deleteHandler= id =>{
             const doYou = window.confirm('You are going to remove this student from list')
         if(doYou){
-            fetch(`http://localhost:5000/students/${id}`,{
+            fetch(`https://morning-lowlands-71578.herokuapp.com/students/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

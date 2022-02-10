@@ -11,14 +11,14 @@ const ManageFood = () => {
     const [num,setNum]=useState(0);
 //for total data length
 useEffect(()=>{
-    const url="http://localhost:5000/foods";
+    const url="https://morning-lowlands-71578.herokuapp.com/foods";
     fetch(url)
     .then(res=>res.json())
     .then(data=>setPages(Math.ceil(data.count/size)))
     },[pages]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/foods?currentPage=${currentPage}&&size=${size}`;
+        const url = `https://morning-lowlands-71578.herokuapp.com/foods?currentPage=${currentPage}&&size=${size}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>{setFoods(data.result);})
@@ -31,7 +31,7 @@ useEffect(()=>{
         const deleteHandler= id =>{
             const doYou = window.confirm('You are going to delete this item')
         if(doYou){
-            fetch(`http://localhost:5000/foods/${id}`,{
+            fetch(`https://morning-lowlands-71578.herokuapp.com/foods/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

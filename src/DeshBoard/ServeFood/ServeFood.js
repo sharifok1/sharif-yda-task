@@ -25,14 +25,14 @@ const ServeFood = () => {
 console.log(addDate,shift,roll);
     //for total data length
     useEffect(()=>{
-        const url="http://localhost:5000/servedStudent";
+        const url="https://morning-lowlands-71578.herokuapp.com/servedStudent";
         fetch(url)
         .then(res=>res.json())
         .then(data=>setPages(Math.ceil(data.count/size)))
         },[])
 
     useEffect(()=>{
-    const url = `http://localhost:5000/servedStudent?currentPage=${currentPage}&&size=${size}&addDate=${addDate}&shift=${shift}&roll=${roll}`;
+    const url = `https://morning-lowlands-71578.herokuapp.com/servedStudent?currentPage=${currentPage}&&size=${size}&addDate=${addDate}&shift=${shift}&roll=${roll}`;
     fetch(url)
     .then(res=>res.json())
     .then(data=>{setStudents(data.result);})
@@ -45,7 +45,7 @@ console.log(addDate,shift,roll);
    const newServedHandler=(served,_id)=>{
     console.log(_id, foodCode,shift, addDate);
 
-    const url = "http://localhost:5000/servedStudent/served"
+    const url = "https://morning-lowlands-71578.herokuapp.com/servedStudent/served"
              fetch(url,{
                method:'PUT',
                headers:{

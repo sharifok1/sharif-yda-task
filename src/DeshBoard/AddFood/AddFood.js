@@ -8,7 +8,7 @@ const AddFood = () => {
     const { register, handleSubmit, reset} = useForm();
     const onSubmit = data =>{
       console.log(data)
-    const url = 'http://localhost:5000/foods'
+    const url = 'https://morning-lowlands-71578.herokuapp.com/foods'
     axios.post(url, data)
     .then(res=>{
         if(res.data.insertedId){
