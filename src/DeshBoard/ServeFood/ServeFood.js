@@ -24,7 +24,7 @@ const ServeFood = () => {
         setRoll(data.roll) 
     }
     useEffect(()=>{
-        const url=`http://localhost:5000/findServed?roll=${roll}`;
+        const url=`https://morning-lowlands-71578.herokuapp.com/findServed?roll=${roll}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>setnewServ(data));
