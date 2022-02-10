@@ -9,14 +9,14 @@ const FoodList = () => {const size = 8;
   
 //for total data length
 useEffect(()=>{
-    const url="http://localhost:5000/foods";
+    const url="https://morning-lowlands-71578.herokuapp.com/foods";
     fetch(url)
     .then(res=>res.json())
     .then(data=>setPages(Math.ceil(data.count/size)))
     },[pages]);
 
     useEffect(()=>{
-        const url = `http://localhost:5000/foods?currentPage=${currentPage}&&size=${size}`;
+        const url = `https://morning-lowlands-71578.herokuapp.com/foods?currentPage=${currentPage}&&size=${size}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>{setFoods(data.result);})

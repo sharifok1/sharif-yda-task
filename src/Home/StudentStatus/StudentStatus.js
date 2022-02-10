@@ -30,7 +30,7 @@ const StudentStatus = () => {
 
     return (
         <div>
-            <h1 style={{marginTop:'10px'}}>Student Managment Table</h1>
+            <h1 style={{marginTop:'10px'}}>Student Status Table</h1>
             <form>
                   <input onChange={e=>setRoll(e.target.value)}
                   style={{width:'50%',padding:'10px',marginBottom:'20px',fontSize:'large'}}
