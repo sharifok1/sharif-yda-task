@@ -31,11 +31,11 @@ const StudentStatus = () => {
     return (
         <div>
             <h1 style={{marginTop:'10px'}}>Student Status Table</h1>
-            <form>
+            {/* <form>
                   <input onChange={e=>setRoll(e.target.value)}
                   style={{width:'50%',padding:'10px',marginBottom:'20px',fontSize:'large'}}
                   type="text" placeholder='enter student roll for details' />
-              </form>
+              </form> */}
           <table style={{width:'90%', border: '1px solid black'}} align="center">
               
             <tbody className='student-table'>
