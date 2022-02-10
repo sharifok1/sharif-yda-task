@@ -48,7 +48,11 @@ const StudentTable = () => {
         }}
 
         ///handleStatus
-        const handleStatus=()=>{
+        const makeActiveHandler=()=>{
+            console.log(active)
+            console.log(inActive)
+        }
+        const makeInActiveHandler=()=>{
             console.log(active)
             console.log(inActive)
         }
@@ -61,7 +65,8 @@ const StudentTable = () => {
                 <th>Roll</th>
                 <th>Name</th>
                 <th>Class</th>
-                <th colSpan="2">Status</th>
+                <th>Update</th>
+                <th>Status</th>  
                 <th>Manage</th>  
             </tr>
             {
@@ -72,23 +77,18 @@ const StudentTable = () => {
                 <td>{student.class}</td>
                 <td>
                 <Checkbox
-                value={'active'}
-                onChange={e=>setActive(e.target.value)}
-                /> Active
-                </td>
-                <td>
-                <Checkbox
-                value={'inActive'}
                 onChange={e=>setInActive(e.target.value)}
-                /> inActive
+                /> 
                 </td>
+                <td>{student.status}</td>
                 <td><button onClick={()=>deleteHandler(student._id)}>Delete</button></td>
             </tr>)
             }
             
             </tbody>
             </table>
-            <Button style={{backgroundColor:'#064b9e',color:'#fff', marginTop:'20px',width:'200px'}} onClick={()=>handleStatus()}>Upadte</Button>
+            <Button style={{backgroundColor:'#064b9e',color:'#fff', margin:'20px',width:'150px'}} onClick={()=>makeActiveHandler()}>Make Active</Button>
+            <Button style={{backgroundColor:'#064b9e',color:'#fff', margin:'20px',width:'150px'}} onClick={()=>makeInActiveHandler()}>Make inInactive</Button>
             <Stack spacing={1}
             sx={{alignItems:'center',mt:5}}
             >
